@@ -561,6 +561,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Learner Images\" />
+    <Folder Include="Trainer Images\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -22,6 +22,8 @@ namespace LMS
             SqlConnection con = new SqlConnection("Data Source=DESKTOP-KAEBEC0\\SQLEXPRESS;Initial Catalog=LMS Project;Integrated Security=True");
 
             string link = Path.GetFileName(FileUpload2.PostedFile.FileName);
+            FileUpload2.SaveAs(Server.MapPath("~/Learner Images/" + link));
+
             con.Open();
             SqlCommand cmd = new SqlCommand("insert into learnerDtl (f_name,l_name,email_id,phone_no,password,c_password,city,country,l_pimage) values (@f_name,@l_name,@email_id,@phone_no,@password,@c_password,@city,@country,@l_pimage)", con);
             cmd.Parameters.AddWithValue("@f_name", textfirst_name.Text);
@@ -33,7 +35,7 @@ namespace LMS
             cmd.Parameters.AddWithValue("@city", textcity.Text);
             cmd.Parameters.AddWithValue("@country", textcountry.Text);
             // cmd.Parameters.AddWithValue("@t_id", texttrainer_id.Text);
-            cmd.Parameters.AddWithValue("@l_pimage", link);
+            cmd.Parameters.AddWithValue("@l_pimage", "Images/"+ link);
 
             int i = cmd.ExecuteNonQuery();
 

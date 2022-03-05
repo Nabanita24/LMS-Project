@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="LMS._Default" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-
+<form id="form1" runat="server">
     <div class="sb2-2">
             <!--== breadcrumbs ==-->
             <div class="sb2-2-2">
@@ -33,14 +33,14 @@
                             <div class="dash-book dash-b-2">
                                 <h5>Learners</h5>
                                 <h4>672</h4>
-                                <a href="#">View more</a>
+                                <a href="admin_all_students.aspx">View more</a>
                             </div>
                         </li>
                         <li>
                             <div class="dash-book dash-b-3">
                                 <h5>Trainers</h5>
                                 <h4>689</h4>
-                                <a href="#">View more</a>
+                                <a href="admin_all_teachers.aspx">View more</a>
                             </div>
                         </li>
                         <li>
@@ -115,7 +115,27 @@
                             </div>
                             <div class="tab-inn">
                                 <div class="table-responsive table-desi">
-                                    <table class="table table-hover">
+                            
+                        <div class="table table-hover">
+                     <asp:GridView ID="GridView1" runat="server" class="table table-hover" AutoGenerateColumns="false">
+                         <Columns>
+                             <asp:ImageField DataImageUrlField="l_pimage" HeaderText="Profile Image"></asp:ImageField>
+                             <asp:BoundField DataField="l_id" HeaderText="Learner Id" />
+                             <asp:BoundField DataField="f_name" HeaderText="First Name" />
+                             <asp:BoundField DataField="l_name" HeaderText="Last Name" />
+                             <asp:BoundField DataField="email_id" HeaderText="Email Id" />
+                             <asp:BoundField DataField="password" HeaderText="Password" />
+                             <asp:BoundField DataField="phone_no" HeaderText="Phone No." />
+                             <asp:BoundField DataField="city" HeaderText="City" />
+                             <asp:BoundField DataField="country" HeaderText="Country" />
+                             <asp:TemplateField>
+                                 <ItemTemplate>
+                                     <asp:Button ID="view" runat="server" class="ad-st-view" Text="view" />
+                                 </ItemTemplate>
+                             </asp:TemplateField>
+                         </Columns>
+                     </asp:GridView>
+                                  <!--  <table class="table table-hover">
                                         <thead>
                                             <tr>
                                                 <th>User</th>
@@ -251,7 +271,9 @@
                                                 <td><a href="/admin_student_details" class="ad-st-view">View</a></td>
                                             </tr>
                                         </tbody>
-                                    </table>
+                                    </table>-->
+                            </div>
+                                
                                 </div>
                             </div>
                         </div>
@@ -270,7 +292,27 @@
                             </div>
                             <div class="tab-inn">
                                 <div class="table-responsive table-desi">
-                                    <table class="table table-hover">
+                                      
+                        <div class="table table-hover">
+                     <asp:GridView ID="GridView2" runat="server" class="table table-hover" AutoGenerateColumns="false">
+                         <Columns>
+                             <asp:ImageField DataImageUrlField="t_pimage" HeaderText="Profile Image"></asp:ImageField>
+                             <asp:BoundField DataField="t_id" HeaderText="Trainer Id"  />
+                             <asp:BoundField DataField="f_name" HeaderText="First Name" />
+                             <asp:BoundField DataField="l_name" HeaderText="Last Name" />
+                             <asp:BoundField DataField="email_id" HeaderText="Email Id" />
+                             <asp:BoundField DataField="password" HeaderText="Password" />
+                             <asp:BoundField DataField="phone_no" HeaderText="Phone No." />
+                             <asp:BoundField DataField="city" HeaderText="City" />
+                             <asp:BoundField DataField="country" HeaderText="Country" />
+                             <asp:TemplateField>
+                                 <ItemTemplate>
+                                     <asp:Button ID="view" runat="server" class="ad-st-view" Text="view" />
+                                 </ItemTemplate>
+                             </asp:TemplateField>
+                         </Columns>
+                     </asp:GridView>
+                                   <!-- <table class="table table-hover">
                                         <thead>
                                             <tr>
                                                 <th>User</th>
@@ -406,7 +448,9 @@
                                                 <td><a href="/admin_student_details" class="ad-st-view">View</a></td>
                                             </tr>
                                         </tbody>
-                                    </table>
+                                    </table>-->
+                            </div>
+                                          
                                 </div>
                             </div>
                         </div>
@@ -462,4 +506,5 @@
                 </div>
             </div>
     </div>
+    </form>
 </asp:Content>

@@ -28,28 +28,28 @@
                         <form id="form1" runat="server">
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <asp:TextBox ID="textevent_name"  class="validate" runat="server" placeholder="Event Name"></asp:TextBox> 
+                                    <asp:TextBox ID="textevent_name"  class="validate" runat="server" placeholder="Event Name" Font-Bold="True"></asp:TextBox> 
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <asp:TextBox ID="textevent_description"  class="validate" runat="server" placeholder="Event Descriptions" TextMode="MultiLine"></asp:TextBox> 
+                                    <asp:TextBox ID="textevent_description"  class="validate" runat="server" placeholder="Event Descriptions" TextMode="MultiLine" Font-Bold="True"></asp:TextBox> 
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s6">
-                                    <asp:TextBox ID="textdate"  class="validate" runat="server" placeholder="Date" TextMode="Date"></asp:TextBox> 
+                                    <asp:TextBox ID="textdate"  class="validate" runat="server" placeholder="Date" TextMode="Date" ForeColor="Silver" Font-Bold="True"></asp:TextBox> 
                                 </div>
                                 <div class="input-field col s6">
-                                    <asp:TextBox ID="texttime"  class="validate" runat="server" placeholder="Time" TextMode="Time"></asp:TextBox> 
+                                    <asp:TextBox ID="texttime"  class="validate" runat="server" placeholder="Time" TextMode="Time" ForeColor="Silver" Font-Bold="True"></asp:TextBox> 
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s6">
-                                    <asp:TextBox ID="textcity"  class="validate" runat="server" placeholder="City"></asp:TextBox> 
+                                    <asp:TextBox ID="textcity"  class="validate" runat="server" placeholder="City" Font-Bold="True"></asp:TextBox> 
                                 </div>
                                 <div class="input-field col s6">
-                                    <asp:TextBox ID="textcountry"  class="validate" runat="server" placeholder="Country"></asp:TextBox> 
+                                    <asp:TextBox ID="textcountry"  class="validate" runat="server" placeholder="Country" Font-Bold="True"></asp:TextBox> 
                                 </div>
                             </div>
                             <div class="row">
@@ -57,7 +57,6 @@
                                 <div class="input-field col s12">
                                     <asp:FileUpload ID="FileUpload3" runat="server" BorderColor="White" /> 
                                     
-                                <asp:Label ID="Label2" runat="server" Text=""></asp:Label>
                                 </div>
                             </div>
                             <!--<div class="row">
@@ -76,7 +75,7 @@
                                     <div class="waves-effect waves-light btn-large waves-input-wrapper">
                                         <!--<input
                                             type="submit" class="waves-button-input"></div>-->
-                                <asp:Button ID="submit" class="waves-button-input" runat="server" Text="submit" Font-Size="Medium" />
+                                <asp:Button ID="submit" class="waves-button-input" runat="server" Text="submit" Font-Size="Medium" OnClick="submit_Click" />
                                         <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
 
                                     </div>
