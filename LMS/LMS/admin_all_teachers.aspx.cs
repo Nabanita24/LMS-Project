@@ -23,12 +23,15 @@ namespace LMS
 
         public void getdata()
         {
+            //Get data from learners table
             SqlConnection con = new SqlConnection("Data Source=DESKTOP-KAEBEC0\\SQLEXPRESS;Initial Catalog=LMS Project;Integrated Security=True");
             con.Open();
             SqlCommand cmd = new SqlCommand("select t_pimage,t_id,f_name,l_name,email_id,password,phone_no,city,country from trainerDtl", con);
             cmd.ExecuteNonQuery();
 
             //con.Open();
+
+
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
             sda.Fill(ds);
